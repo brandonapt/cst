@@ -25,7 +25,6 @@ local CROSS_SERVER_UPLOAD_KEY: string = ConfigurationService:GetVariable("CROSS_
 local EMOTE_PREFIX: string = ConfigurationService:GetVariable("EMOTE_PREFIX")
 
 -- Variables (unknown)
-local masterSystem
 local memoryStoreService
 local dimensionsService
 local zoneDataService
@@ -198,7 +197,7 @@ end
 
 
 function CrossServerService:KnitInit()
-    
+	self:SetUp()
 end
 
 
@@ -620,19 +619,6 @@ function CrossServerService:updatePlayerMetaData(player: Player, updateFunction:
 	self._playersMetaData[player] = updatedData
 end
 
--- This function initializes the CrossServerService. It sets the masterSystem to the provided coreSystem and copies over any data from previousManagerData to the service. It also creates a manager save data key for _playersOutfitData using the masterSystem.
-function CrossServerService:Init(coreSystem: any, previousManagerData : any)
-	masterSystem = coreSystem
-
-	if previousManagerData then
-		for dataKey : string, dataValue : any in previousManagerData do
-			self[dataKey] = dataValue
-		end
-	end
-
-	masterSystem:CreateManagerSaveDataKey(self, "_playersOutfitData")
-end
-
 function CrossServerService:SetUp()
 	local networkEnabled: boolean = masterSystem:GetConstant("CrossServer_Enabled", 30)
 	self.serviceEnabled = networkEnabled print(547, networkEnabled)
@@ -643,11 +629,10 @@ function CrossServerService:SetUp()
 	
 	local metaverseSystem: any = masterSystem:GetSystem("MetaverseSystem", "Core")
 	local centralSystem: any = masterSystem:GetSystem("CentralSystem", "Core")
-	local gameSystem: any = masterSystem:GetSystem("GameSystem", "Default_Game")
 	
 	local centralPlayersService: any = centralSystem:GetService("PlayersService")
 	local humanoidService: any = masterSystem:GetService("HumanoidService")
-	local chatsService: any = masterSystem:GetService("ChatsService")
+	local chatsService: any = Knit.GetService("ChatService")
 	
 	memoryStoreService = centralSystem:GetService("MemoryStoreService")
 	zoneDataService = metaverseSystem:GetService("ZoneDataService")
