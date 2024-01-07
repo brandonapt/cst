@@ -50,7 +50,11 @@ ConfigurationService.Variables = {
         "ClimbAnimation", "FallAnimation", "IdleAnimation",
         "JumpAnimation", "MoodAnimation", "RunAnimation",
         "SwimAnimation", "WalkAnimation"
-    }
+    },
+    ["PLAYER_INCREMENT_MEMORYSTORE_LIMIT_PER_MINUTE"] = 100,
+    ["DEFAULT_MEMORYSTORE_EXPIRATION_TIME"] = 60,
+    ["MIN_MEMORYSTORE_LIMIT_PER_MINUTE"] = 100,
+
 }
 
 
