@@ -56,8 +56,9 @@ ConfigurationService.Variables = {
     ["MIN_MEMORYSTORE_LIMIT_PER_MINUTE"] = 100,
     ["SAVE_ZONE_DATA_ACTION"] = "Save Zone Data",
     ["GET_ZONE_DATA_ACTION"] = "Get Zone Data",
-    ["ZONE_AUTO_UPDATE_INTERVAL_TIME"]= 30
-
+    ["ZONE_AUTO_UPDATE_INTERVAL_TIME"]= 30,
+    ["DATASTORE_WAIT_TIME"] = 1.005,
+    ["DATASTORE_MAX_RETRIES"] = 3
 }
 
 
