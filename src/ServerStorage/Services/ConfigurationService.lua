@@ -58,7 +58,77 @@ ConfigurationService.Variables = {
     ["GET_ZONE_DATA_ACTION"] = "Get Zone Data",
     ["ZONE_AUTO_UPDATE_INTERVAL_TIME"]= 30,
     ["DATASTORE_WAIT_TIME"] = 1.005,
-    ["DATASTORE_MAX_RETRIES"] = 3
+    ["DATASTORE_MAX_RETRIES"] = 3,
+    ["PLAYING_EMOTE_ATTRIBUTE"] = "CCS_PlayingEmote",
+    ["ACCESSORY_TYPES_CONSTANT"] = "Core_AccessoryTypes",
+    ["CUSTOM_EMOTE_PREFIX"] = "MetaverseCustom_%s",
+    ["ACCESSORY_TYPES"] = {
+        Enum.AccessoryType.Shirt, Enum.AccessoryType.Pants, Enum.AccessoryType.Back,
+        Enum.AccessoryType.Hat, Enum.AccessoryType.Hair, Enum.AccessoryType.Jacket,
+        Enum.AccessoryType.TShirt, Enum.AccessoryType.Sweater, Enum.AccessoryType.DressSkirt,
+        Enum.AccessoryType.Face, Enum.AccessoryType.Neck, Enum.AccessoryType.Front,
+        Enum.AccessoryType.Waist, Enum.AccessoryType.Shorts, Enum.AccessoryType.Eyebrow,
+        Enum.AccessoryType.Eyelash, Enum.AccessoryType.LeftShoe, Enum.AccessoryType.Unknown,
+        Enum.AccessoryType.Shoulder, Enum.AccessoryType.RightShoe
+    },
+    ["SPECIAL_VALUES_DATA_FUNCTIONS"] = {
+        ["Color3"] = {
+            encode = function(value: Color3)
+                return string.format(
+                    "%s_%s_%s",
+                    tostring(math.clamp(math.floor(value.R * 255), 0, 255)),
+                    tostring(math.clamp(math.floor(value.G * 255), 0, 255)),
+                    tostring(math.clamp(math.floor(value.B * 255), 0, 255))
+                )
+            end,
+            decode = function(value: string)
+                local args: any = string.split(value, "_")
+                return Color3.fromRGB(
+                    tonumber(args[1]),
+                    tonumber(args[2]),
+                    tonumber(args[3])
+                )
+            end,
+        }
+    },
+    ["LAYERED_ACCESSORY_WRITE_ORDER"] = {
+        "LeftShoe",
+        "RightShoe",
+        "Pants",
+        "Shorts",
+        "TShirt",
+        "Shirt",
+        "DressSkirt",
+        "Jacket",
+        "Sweater",
+        "Eyebrow",
+        "Eyelash"
+    },
+    ["BODY_PARTS_NAMES_LIST"] = {
+        "Face", "Head", "LeftArm", "LeftLeg", "RightArm", "RightLeg", "Torso"
+    },
+
+    ["ANIMATION_NAMES_LIST"] = {
+        "ClimbAnimation", "FallAnimation", "IdleAnimation", "JumpAnimation",
+        "MoodAnimation", "RunAnimation", "SwimAnimation", "WalkAnimation"
+    },
+
+    ["ACCESSORIES_ALLOWED_AMOUNTS"] = {
+        BackAccessory = 1,
+        FaceAccessory = 1,
+        FrontAccessory = 1,
+        HairAccessory = 3,
+        HatAccessory = 3,
+        NeckAccessory = 1,
+        ShouldersAccessory = 1,
+        WaistAccessory = 1,
+    },
+    ["GET_USER_DATA_ACTION"] = "Get User Data",
+    ["REMOVE_USER_DATA_ACTION"] = "Remove User Data",
+    ["DELETE_USER_DATA_ACTION"] = "Delete User Data",
+    ["REQUEST_USER_DATA_ACTION"] = "Request User Data",
+    ["DEFAULT_DATA_WAIT_YIELD_TIME"] = 60,
+    ["RESET_DATA_COMMAND"] = "resetdata",
 }
 
 
