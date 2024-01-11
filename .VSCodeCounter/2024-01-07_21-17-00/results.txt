@@ -1,0 +1,65 @@
+Date : 2024-01-07 21:17:00
+Directory : c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma
+Total : 26 files,  4258 codes, 120 comments, 1010 blanks, all 5388 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Lua      |         24 |      4,197 |        120 |      1,004 |      5,321 |
+| JSON     |          1 |         49 |          0 |          1 |         50 |
+| Markdown |          1 |         12 |          0 |          5 |         17 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                             | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                |         26 |      4,258 |        120 |      1,010 |      5,388 |
+| . (Files)                                                                                                                        |          2 |         61 |          0 |          6 |         67 |
+| src                                                                                                                              |         24 |      4,197 |        120 |      1,004 |      5,321 |
+| src\ReplicatedStorage                                                                                                            |          5 |        543 |          1 |        163 |        707 |
+| src\ReplicatedStorage\Components                                                                                                 |          1 |        138 |          0 |         39 |        177 |
+| src\ReplicatedStorage\Controllers                                                                                                |          4 |        405 |          1 |        124 |        530 |
+| src\ReplicatedStorage\Controllers (Files)                                                                                        |          1 |         31 |          0 |         12 |         43 |
+| src\ReplicatedStorage\Controllers\CrossServer                                                                                    |          3 |        374 |          1 |        112 |        487 |
+| src\ServerScriptService                                                                                                          |          1 |          4 |          0 |          2 |          6 |
+| src\ServerStorage                                                                                                                |         17 |      3,646 |        119 |        836 |      4,601 |
+| src\ServerStorage\Services                                                                                                       |         17 |      3,646 |        119 |        836 |      4,601 |
+| src\ServerStorage\Services (Files)                                                                                               |          1 |        135 |          0 |         15 |        150 |
+| src\ServerStorage\Services\CrossServer                                                                                           |         16 |      3,511 |        119 |        821 |      4,451 |
+| src\StarterPlayer                                                                                                                |          1 |          4 |          0 |          3 |          7 |
++----------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                                                         | language | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\README.md                                                                      | Markdown |         12 |          0 |          5 |         17 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\default.project.json                                                           | JSON     |         49 |          0 |          1 |         50 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ReplicatedStorage\Components\ClipDataObject.lua                            | Lua      |        138 |          0 |         39 |        177 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ReplicatedStorage\Controllers\ConfigurationController.lua                  | Lua      |         31 |          0 |         12 |         43 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ReplicatedStorage\Controllers\CrossServer\AnimatorController.lua           | Lua      |        121 |          0 |         39 |        160 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ReplicatedStorage\Controllers\CrossServer\HumanoidController.lua           | Lua      |        125 |          1 |         34 |        160 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ReplicatedStorage\Controllers\CrossServer\MetaverseCharacterController.lua | Lua      |        128 |          0 |         39 |        167 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ServerScriptService\KnitRuntime.server.lua                                 | Lua      |          4 |          0 |          2 |          6 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ServerStorage\Services\ConfigurationService.lua                            | Lua      |        135 |          0 |         15 |        150 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ServerStorage\Services\CrossServer\CharacterCustomisationService.lua       | Lua      |        429 |         12 |        104 |        545 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ServerStorage\Services\CrossServer\ChatService.lua                         | Lua      |         75 |          2 |         24 |        101 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ServerStorage\Services\CrossServer\ClothingService.lua                     | Lua      |        523 |         12 |         90 |        625 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ServerStorage\Services\CrossServer\CollisionGroupService.lua               | Lua      |         82 |          0 |         23 |        105 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ServerStorage\Services\CrossServer\CrossServerService.lua                  | Lua      |        702 |         61 |        138 |        901 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ServerStorage\Services\CrossServer\DatastoreService.lua                    | Lua      |        216 |          0 |         66 |        282 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ServerStorage\Services\CrossServer\DimensionsService.lua                   | Lua      |         16 |          0 |         10 |         26 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ServerStorage\Services\CrossServer\GamePlayerService.lua                   | Lua      |        159 |          2 |         41 |        202 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ServerStorage\Services\CrossServer\HumanoidService.lua                     | Lua      |        102 |          0 |         28 |        130 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ServerStorage\Services\CrossServer\MemoryStoreService.lua                  | Lua      |        332 |          7 |         72 |        411 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ServerStorage\Services\CrossServer\MetaverseCharacterService.lua           | Lua      |        239 |          6 |         66 |        311 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ServerStorage\Services\CrossServer\PlayerService.lua                       | Lua      |         89 |          0 |         24 |        113 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ServerStorage\Services\CrossServer\ReplicationService.lua                  | Lua      |        310 |         14 |         61 |        385 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ServerStorage\Services\CrossServer\SetupService.lua                        | Lua      |         39 |          0 |         12 |         51 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ServerStorage\Services\CrossServer\ZoneDataService.lua                     | Lua      |        178 |          2 |         50 |        230 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\ServerStorage\Services\CrossServer\ZoneService.lua                         | Lua      |         20 |          1 |         12 |         33 |
+| c:\Users\Brand\OneDrive\Desktop\Projects\kurukuma\src\StarterPlayer\KnitRuntime.client.lua                                       | Lua      |          4 |          0 |          3 |          7 |
+| Total                                                                                                                            |          |      4,258 |        120 |      1,010 |      5,388 |
++----------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+

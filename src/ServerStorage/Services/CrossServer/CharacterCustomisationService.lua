@@ -18,6 +18,8 @@ local SPECIAL_VALUES_DATA_FUNCTIONS: any = ConfigurationService:GetVariable("SPE
 
 local LAYERED_ACCESSORY_WRITE_ORDER: any = ConfigurationService:GetVariable("LAYERED_ACCESSORY_WRITE_ORDER")
 
+local BODY_COLOR_PROPERTIES: any = ConfigurationService:GetVariable("BODY_COLOR_PROPERTIES")
+
 local CharacterCustomisationService = Knit.CreateService {
     Name = "CharacterCustomisationService",
     _crossServerOutfits = {},
@@ -42,9 +44,9 @@ function CharacterCustomisationService:KnitInit()
 end
 
 function CharacterCustomisationService:SetUp()
-	playersService = masterSystem:GetManager("PlayersService")
+	self.playersService = Knit.GetService("GamePlayerService")
 
-	playersService:updateDataSchema({
+	self.playersService:updateDataSchema({
 		characterData = {
 			_isPlayerData = 1,
 			outfitId = 0, --> outfitId from player's own outfitsInventory
@@ -269,7 +271,7 @@ function CharacterCustomisationService:_getHumanoidDescriptionFromOutfitData(out
 	if #outfitData.accessories > 2 then
 		local layeredClothingAccessories = HttpService:JSONDecode(outfitData.accessories)
 		for _, accessoryData in layeredClothingAccessories do
-			accessoryData["AccessoryType"] = masterSystem:GetConstant(ACCESSORY_TYPES_CONSTANT):GetEnumFromId(accessoryData.AccessoryType)
+			accessoryData["AccessoryType"] = ConfigurationService:GetVariable("ACCESSORY_TYPES_CONSTANT"):GetEnumFromId(accessoryData.AccessoryType)
 		end
 		
 		newHumanoidDescription:SetAccessories(layeredClothingAccessories, false)

@@ -139,7 +139,7 @@ function ZoneDataService:getZoneData(zoneIndex: string, yieldUntilResultFound: b
 		until self.datastoreService
 	end
 	
-	local foundZoneDetails: ZoneDetails = self._zonesData[zoneIndex]
+	local foundZoneDetails: any = self._zonesData[zoneIndex]
 	if not foundZoneDetails and not self._getDataQueue[zoneIndex] then
 		self._getDataQueue[zoneIndex] = true
 		self.datastoreService:addDatastoreRequest(GET_ZONE_DATA_ACTION, 20, {

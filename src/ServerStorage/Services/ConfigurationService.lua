@@ -129,6 +129,7 @@ ConfigurationService.Variables = {
     ["REQUEST_USER_DATA_ACTION"] = "Request User Data",
     ["DEFAULT_DATA_WAIT_YIELD_TIME"] = 60,
     ["RESET_DATA_COMMAND"] = "resetdata",
+    ["BODY_COLOR_PROPERTIES"] = {"HeadColor", "LeftArmColor", "LeftLegColor", "RightArmColor", "RightLegColor", "TorsoColor"}
 }
 
 
