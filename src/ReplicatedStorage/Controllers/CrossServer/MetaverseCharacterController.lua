@@ -73,7 +73,7 @@ end
 
 function MetaverseCharacterController:_removeOutdatedCharacters()
 	local currentSecond: number = DateTime.now():ToUniversalTime().Second
-	for _, characterHandler: Handler in self._inGameCharacters do
+	for _, characterHandler: any in self._inGameCharacters do
 		if characterHandler._updatedTimestamp == currentSecond then
 			continue
 		end
@@ -101,9 +101,10 @@ function MetaverseCharacterController:addCharacterMasterHandler(characterType: s
 end
 
 function MetaverseCharacterController:SetUp()
-	local metaverseCharactersService: any = masterSystem:GetService("MetaverseCharactersService")
+	self.masterSystem = Knit.GetService("MasterService")
+	local metaverseCharactersService: any = Knit.GetService("MetaverseCharactersService")
 	
-	CharacterReplicator = require(masterSystem.resources.Handlers.CharacterReplicator)
+	self.CharacterReplicator = require(masterSystem.resources.Handlers.CharacterReplicator)
 	
 	local clientFolder: Folder = masterSystem:GetConstant(CLIENT_FOLDER_CONSTANT)
 	for _, otherFolder: Folder in clientFolder:GetChildren() do
@@ -112,8 +113,8 @@ function MetaverseCharacterController:SetUp()
 		end
 	end
 	
-	metaverseCharactersFolder = Instance.new("Folder", clientFolder)
-	metaverseCharactersFolder.Name = "Metaverse_PlayersCharacters"
+	self.metaverseCharactersFolder = Instance.new("Folder", clientFolder)
+	self.metaverseCharactersFolder.Name = "Metaverse_PlayersCharacters"
 	
 	metaverseCharactersService.playerRenderCharactersDataUpdated:Connect(function(renderCharacters: any)
 		for characterKey: string, characterData: any in renderCharacters do
@@ -130,9 +131,6 @@ function MetaverseCharacterController:SetUp()
 	
 	TextChatService.OnIncomingMessage = function(textChatMessage: TextChatMessage)
 		local properties: TextChatMessageProperties = Instance.new("TextChatMessageProperties") 
-		if not masterSystem.coreRunning then
-			return properties
-		end
 		
 		local metaData: any = textChatMessage.Metadata
 		if metaData and typeof(metaData) == "string" and #metaData >= 4 then

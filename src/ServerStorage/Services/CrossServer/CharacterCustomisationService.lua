@@ -378,7 +378,7 @@ function CharacterCustomisationService:removePlayerOutfit(player: Player)
 	self:_signalPlayerOutfitChanged(player)
 end
 
-function CharacterCustomisationService:addOutfit(player: Player, data: Data, newOutfitData: any)
+function CharacterCustomisationService:addOutfit(player: Player, data: any, newOutfitData: any)
 	if typeof(newOutfitData) == "Instance" and newOutfitData:IsA("HumanoidDescription") then
 		local writeOutfitData: any = self:_generateOutfitDataFromHumanoidDescription(newOutfitData)
 		newOutfitData = writeOutfitData

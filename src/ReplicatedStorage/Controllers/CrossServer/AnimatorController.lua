@@ -123,9 +123,10 @@ function AnimatorController:getAnimationClip(clipName: string)
 end
 
 function AnimatorController:SetUp()
-	local characterAddedSignal : any = masterSystem:GetSignal("CharacterAdded")
+	self.masterService = Knit.GetService("MasterService")
+	local characterAddedSignal : any = self.masterSystem:GetSignal("CharacterAdded")
 
-	characterAddedSignal:AddServerCallback(function(character : Model)
+	characterAddedSignal:Connect(function(character : Model)
 		task.delay(0.05, function()
 			if not character or not character.Parent then
 				return

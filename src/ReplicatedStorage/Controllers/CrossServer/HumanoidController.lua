@@ -136,7 +136,8 @@ function HumanoidController:registerAnimator(character: Model)
 end
 
 function HumanoidController:SetUp()
-	local characterAddedSignal : Signal = masterSystem:GetSignal("CharacterAdded")
+	self.masterSystem = Knit.GetService("MasterService")
+	local characterAddedSignal : any = self.masterSystem:GetSignal("CharacterAdded")
 	
 	HumanoidService.onPlayerAnimationDataUpdate:Connect(function(blacklistTag: string, blacklist: table)
 		self._animationsBlacklist[blacklistTag] = blacklist
